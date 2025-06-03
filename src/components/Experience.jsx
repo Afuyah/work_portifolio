@@ -91,7 +91,7 @@ const ExperienceItem = ({ year, role, company, logo, description, index }) => {
       <div className="relative pl-10 sm:pl-20 pb-8 sm:pb-10">
         {/* Year badge - smaller on mobile */}
         <motion.div 
-          className="absolute left-0 top-1 px-2 py-0.5 sm:px-3 sm:py-1 bg-gray-900 text-xs font-bold rounded-full border border-cyan-400/20 shadow-sm text-cyan-300"
+          className="absolute left-0 top-0.5 px-2 py-0 sm:px-3 sm:py-0 bg-gray-900 text-xs font-bold rounded-full border border-cyan-400/20 shadow-sm text-cyan-300 z-10"
           whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
         >
           {year}
