@@ -138,9 +138,9 @@ export default function About() {
               transition={{ delay: shouldReduceMotion ? 0 : 0.5, type: 'spring' }}
             >
               <span className="text-xs sm:text-sm font-bold flex items-center gap-1">
-                <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
+                <span className="relative flex h-2.5 w-2.5 sm:h-2 sm:w-2">
                   {!shouldReduceMotion && (
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-1"></span>
                   )}
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-cyan-500"></span>
                 </span>

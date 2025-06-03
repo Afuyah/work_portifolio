@@ -214,7 +214,7 @@ export default function Contact() {
           transition={{ delay: shouldReduceMotion ? 0 : 0.4 }}
           viewport={{ once: true }}
         >
-          <p>Prefer email? Reach me directly at <a href="mailto:henrybulimo@gmail.com" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">henrybulimo@gmail.com</a></p>
+          <p>Prefer email? Reach me directly at <a href="mailto:henryafuya4@gmail.com" className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">henryafuya4@gmail.com</a></p>
         </motion.div>
       </div>
 
