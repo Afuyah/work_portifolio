@@ -100,10 +100,10 @@ export default function Hero() {
         {/* Cyberpunk name with glow effect */}
         <motion.h1 
           variants={item}
-          className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600"
+          className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"
         >
           <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Henry Bulimo</span>
-          <SparklesIcon className="w-8 h-8 md:w-12 md:h-12 inline-block ml-2 text-amber-400 animate-sparkle" />
+          
         </motion.h1>
 
         {/* Profession chips with neon glow */}

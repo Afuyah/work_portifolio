@@ -142,7 +142,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 neon-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
             <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Technical Expertise</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">

@@ -109,7 +109,7 @@ const ExperienceItem = ({ year, role, company, logo, description, index }) => {
             {/* Logo/icon with neon glow */}
             <div className={`flex items-center justify-center p-3 rounded-lg bg-${color}-900/20 border border-${color}-400/20 text-${color}-400 shadow-inner group-hover:shadow-${color}-400/20 transition-all duration-300`}>
               {logo ? (
-                <img src={logo} alt={company} className="h-8 w-8 object-contain" />
+                <img src={logo} alt="logo" className="h-8 w-8 object-contain" />
               ) : (
                 iconMap[company] || <BriefcaseIcon className="h-6 w-6" />
               )}
@@ -184,7 +184,7 @@ export default function Experience() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 neon-text">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 ">
             <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Professional Journey</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">

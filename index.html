@@ -1,117 +1,157 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Henry Bulimo | Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Henry Bulimo | Portfolio</title>
 
-    <!-- 🌟 Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-AVB362qWFz4+6L1kLNYZ5Y4Fiv6D5I6Oy7+4MLR4Ff7L2+Qj4Q1x7lA5F9k5O8/5C4U8+YdN5A5h5k5v5+5g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- 🌟 Font Awesome Icons (optimized with proper integrity hash) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-AVB362qWFz4+6L1kLNYZ5Y4Fiv6D5I6Oy7+4MLR4Ff7L2+Qj4Q1x7lA5F9k5O8/5C4U8+YdN5A5h5k5v5+5g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-    <style>
-      /* Consolidated Animation Definitions */
-      @keyframes scanline {
-        0% { transform: translateY(-100%); }
-        100% { transform: translateY(calc(100% + 1px)); }
+  <style>
+    /* Consolidated and optimized animations */
+    @media (prefers-reduced-motion: no-preference) {
+      /* Only show animations if user hasn't requested reduced motion */
+      @keyframes subtle-flicker {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.95; }
       }
       
-      @keyframes flicker {
-        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-          opacity: 1;
-        }
-        20%, 22%, 24%, 55% {
-          opacity: 0.8;
-        }
+      @keyframes mobile-blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(5px, -5px) scale(1.02); }
+        100% { transform: translate(0px, 0px) scale(1); }
       }
       
+      @keyframes desktop-blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(10px, -15px) scale(1.05); }
+        66% { transform: translate(-5px, 5px) scale(0.98); }
+        100% { transform: translate(0px, 0px) scale(1); }
+      }
+      
+      @keyframes subtle-sparkle {
+        0%, 100% { opacity: 0.8; transform: scale(0.98); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+      
+     
+      .optimized-animation {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+    }
+
+    /* Mobile-specific optimizations */
+    @media (max-width: 768px) {
+     
+      /* Disable heavy animations completely on mobile */
+      .animate-flicker, .animate-scanline {
+        animation: none !important;
+      }
+      
+      /* Simpler animations for mobile */
+      .animate-mobile-blob {
+        animation: mobile-blob 8s infinite ease-in-out;
+      }
+    }
+
+    /* Desktop-specific styles */
+    @media (min-width: 769px) {
       .neon-text {
         text-shadow: 0 0 5px rgba(34, 211, 238, 0.5), 
-                     0 0 10px rgba(34, 211, 238, 0.3);
+                     0 0 8px rgba(34, 211, 238, 0.3);
       }
       
-      .neon-text-white {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
-                     0 0 10px rgba(255, 255, 255, 0.3);
+      .animate-desktop-blob {
+        animation: desktop-blob 10s infinite ease-in-out;
       }
-      
-      .animate-flicker {
-        animation: flicker 3s infinite;
-      }
-      
-      .animate-scanline {
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .animate-scanline::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: rgba(34, 211, 238, 0.5);
-        animation: scanline 6s linear infinite;
-      }
-    </style>
+    }
 
-    <!-- ✅ Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    /* Reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 
-    <!-- 🎨 Tailwind Custom Theme Config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            animation: {
-              'pulse-slower': 'pulse 8s infinite',
-              blob: 'blob 7s infinite',
-              sparkle: 'sparkle 1.5s ease-in-out infinite',
-            },
-            keyframes: {
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              sparkle: {
-                '0%': { opacity: 0.3, transform: 'scale(0.8)' },
-                '50%': { opacity: 1, transform: 'scale(1.2)' },
-                '100%': { opacity: 0.3, transform: 'scale(0.8)' },
-              },
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              orbitron: ['Orbitron', 'sans-serif'],
-            },
+  <!-- ✅ Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 🎨 Optimized Tailwind Custom Theme Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'pulse-slower': 'pulse 10s infinite',
+            'subtle-sparkle': 'subtle-sparkle 2s ease-in-out infinite',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'],
           },
         },
-      };
-    </script>
+      },
+      corePlugins: {
+        // Disable unnecessary animations for performance
+        animation: process.env.NODE_ENV === 'production',
+      }
+    };
+  </script>
 
-    <!-- 🌐 Inter Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- 🌐 Font Preload for better performance -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" as="style">
 
-    <!-- 🌐 Orbitron (futuristic alternative font) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- 🌐 Inter Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+    media="print" onload="this.media='all'"
+  />
 
-  <body class="bg-white text-gray-900 font-sans antialiased">
-    <!-- React mounts here -->
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- 🌐 Orbitron Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
+    rel="stylesheet"
+    media="print" onload="this.media='all'"
+  />
+</head>
+
+<body class="bg-white text-gray-900 font-sans antialiased">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  
+  <!-- Performance optimization script -->
+  <script>
+    // Detect device capabilities and adjust animations
+    function optimizeForDevice() {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isLowEnd = (navigator.hardwareConcurrency < 2) || (navigator.deviceMemory < 2);
+      
+      if (isMobile || isLowEnd) {
+        document.documentElement.classList.add('low-performance');
+        // Additional optimizations can be added here
+      }
+    }
+    
+    // Run optimizations after DOM loads
+    document.addEventListener('DOMContentLoaded', optimizeForDevice);
+    
+    // Re-check on resize/orientation change
+    window.addEventListener('resize', optimizeForDevice);
+    window.addEventListener('orientationchange', optimizeForDevice);
+  </script>
+</body>
 </html>

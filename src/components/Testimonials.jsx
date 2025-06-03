@@ -105,7 +105,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 neon-text">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
             <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Client Voices</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">

@@ -138,7 +138,7 @@ export default function About() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                 </span>
-                Hello!
+                Available
               </span>
             </motion.div>
           </motion.div>
@@ -153,7 +153,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 neon-text"
+              className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 "
               variants={item}
             >
               <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">About Me</span>

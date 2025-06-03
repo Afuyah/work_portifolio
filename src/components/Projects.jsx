@@ -146,7 +146,7 @@ export default function Projects() {
             <SparklesIcon className="h-4 w-4 text-amber-400" />
             <span className="text-sm font-medium text-amber-400">Portfolio Showcase</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 neon-text">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 ">
             <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Development Journey</span>
           </h2>
           <p className="text-base md:text-lg text-gray-400 max-w-xl mx-auto">
