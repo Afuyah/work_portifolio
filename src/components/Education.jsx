@@ -116,8 +116,8 @@ export default function Education() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
-            <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Academic Background</span>
+                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-white sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+  <span className="drop-shadow-[0_0_3px_rgba(34,211,238,0.5)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)]">Academic Background</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
             My educational journey and foundational knowledge

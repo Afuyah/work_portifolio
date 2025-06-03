@@ -108,16 +108,15 @@ export default function Hero() {
         animate="show"
       >
         {/* Solid color heading with gradient text for better visibility */}
-        <motion.h1 
-          variants={item}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
-        >
-          <span className="text-white">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 drop-shadow-[0_0_4px_rgba(34,211,238,0.4)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
-              Henry Bulimo
-            </span>
-          </span>
-        </motion.h1>
+       <motion.h1
+  variants={item}
+  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"
+>
+  <span className="drop-shadow-[0_0_4px_rgba(34,211,238,0.4)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
+    Henry Bulimo
+  </span>
+</motion.h1>
+
 
         {/* Profession chips - smaller on mobile */}
         <motion.div variants={item} className="mt-4 sm:mt-6 flex flex-wrap justify-center gap-2 sm:gap-3">
