@@ -51,8 +51,8 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 neon-text">
-              <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Henry Bulimo</span>
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-white sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+  <span className="drop-shadow-[0_0_3px_rgba(34,211,238,0.5)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)]">Henry Bulimo</span>
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Crafting innovative digital experiences with cutting-edge technology and futuristic design.
@@ -112,10 +112,9 @@ export default function Footer() {
             <h4 className="text-gray-300 font-medium text-lg border-b border-blue-400/30 pb-2">Connect With Me</h4>
             <div className="flex flex-wrap gap-4">
               {[
-                { icon: <FaGithub className="text-lg" />, url: 'https://github.com/henrybulimo', color: 'gray' },
+                { icon: <FaGithub className="text-lg" />, url: 'https://github.com/afuyah', color: 'gray' },
                 { icon: <FaLinkedin className="text-lg" />, url: 'https://linkedin.com/in/henrybulimo', color: 'blue' },
-                { icon: <FaTwitter className="text-lg" />, url: 'https://twitter.com/henrybulimo', color: 'cyan' },
-                { icon: <FaEnvelope className="text-lg" />, url: 'mailto:henrybulimo@gmail.com', color: 'purple' }
+                { icon: <FaEnvelope className="text-lg" />, url: 'mailto:henryafuya4@gmail.com', color: 'purple' }
               ].map((social, index) => (
                 <motion.a
                   key={index}

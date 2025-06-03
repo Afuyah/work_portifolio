@@ -1,58 +1,60 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { FaQuoteLeft } from 'react-icons/fa';
 
 export default function Testimonials() {
+  const shouldReduceMotion = useReducedMotion();
+
   const testimonials = [
     {
       name: 'Kevin OChae',
-      position: 'CTO, Kedatrack Limited.',
-      message: 'Henry transformed our digital infrastructure with his futuristic design thinking. His technical execution is unparalleled in the industry.',
-      avatar: 'https://i.pravatar.cc/150?img=3',
+      position: 'CTO, Kedatrack',
+      message: 'Henry transformed our digital infrastructure with his futuristic design thinking. His technical execution is unparalleled.',
+      avatar: 'https://www.kedatracklimited.com/static/team/kevin.jpeg',
       color: 'cyan'
     },
     {
       name: 'Muchiri Erick',
-      position: 'CEO, Nourisha G ',
-      message: 'A true visionary. The sleek, modern systems Henry delivered exceeded all our expectations and set new standards for our company.',
+      position: 'CEO, Nourisha',
+      message: 'A true visionary. The sleek, modern systems Henry delivered exceeded all our expectations and set new standards.',
       avatar: 'https://i.pravatar.cc/150?img=4',
       color: 'purple'
     },
     {
       name: 'Dorcus Teddy',
-      position: 'Director of Engineering, BhaTek Software Solutions',
-      message: 'Henry combines rare technical depth with exceptional design sensibility. Our team was consistently impressed by his professionalism and innovation.',
+      position: 'Director, BhaTek',
+      message: 'Henry combines rare technical depth with exceptional design sensibility. Our team was consistently impressed.',
       avatar: 'https://i.pravatar.cc/150?img=5',
       color: 'blue'
     },
   ];
 
   return (
-    <section className="relative bg-gray-950 py-28 px-6 md:px-16 overflow-hidden" id="testimonials">
-      {/* Cyberpunk grid background */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+    <section className="relative bg-gray-950 py-16 sm:py-28 px-4 sm:px-6 md:px-16 overflow-hidden" id="testimonials">
+      {/* Cyberpunk grid background - hidden on mobile */}
+      <div className="hidden sm:block absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNjAgMTAgTSAxMCAwIEwgMTAgNjAgTSAwIDIwIEwgNjAgMjAgTSAyMCAwIEwgMjAgNjAgTSAwIDMwIEwgNjAgMzAgTSAzMCAwIEwgMzAgNjAgTSAwIDQwIEwgNjAgNDAgTSA0MCAwIEwgNDAgNjAgTSAwIDUwIEwgNjAgNTAgTSA1MCAwIEwgNTAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxMDAsMjU1LDEwMCwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
       </div>
       
-      {/* Neon glow effects */}
+      {/* Neon glow effects - simplified on mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Neon border lines */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
         
-        {/* Animated neon particles */}
-        {[...Array(20)].map((_, i) => (
+        {/* Animated neon particles - only on desktop */}
+        {!shouldReduceMotion && window.innerWidth > 640 && [...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-cyan-500"
             style={{
-              width: Math.random() * 3 + 1 + 'px',
-              height: Math.random() * 3 + 1 + 'px',
+              width: Math.random() * 2 + 1 + 'px',
+              height: Math.random() * 2 + 1 + 'px',
               left: Math.random() * 100 + '%',
               top: Math.random() * 100 + '%',
             }}
             animate={{
-              x: [0, (Math.random() - 0.5) * 50],
-              y: [0, (Math.random() - 0.5) * 50],
+              x: [0, (Math.random() - 0.5) * 20],
+              y: [0, (Math.random() - 0.5) * 20],
               opacity: [0.3, 0.8, 0.3],
             }}
             transition={{
@@ -64,87 +66,89 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* Neon blobs */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          className="absolute top-[10%] left-[10%] w-[40rem] h-[40rem] bg-cyan-500/10 rounded-full blur-[120px] mix-blend-screen"
-          animate={{
-            x: [0, 40, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.3, 0.2]
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute bottom-[20%] right-[10%] w-[35rem] h-[35rem] bg-purple-500/10 rounded-full blur-[100px] mix-blend-screen"
-          animate={{
-            x: [0, -30, 0],
-            y: [0, -20, 0],
-            scale: [1, 1.05, 1],
-            opacity: [0.2, 0.25, 0.2]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 5
-          }}
-        />
-      </div>
+      {/* Neon blobs - reduced on mobile */}
+      {!shouldReduceMotion && (
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <motion.div
+            className="absolute top-[10%] left-[10%] w-[20rem] sm:w-[40rem] h-[20rem] sm:h-[40rem] bg-cyan-500/10 rounded-full blur-[60px] sm:blur-[120px] mix-blend-screen"
+            animate={{
+              x: [0, 20, 0],
+              y: [0, 15, 0],
+              scale: [1, 1.05, 1],
+              opacity: [0.1, 0.15, 0.1]
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div
+            className="absolute bottom-[20%] right-[10%] w-[15rem] sm:w-[35rem] h-[15rem] sm:h-[35rem] bg-purple-500/10 rounded-full blur-[50px] sm:blur-[100px] mix-blend-screen"
+            animate={{
+              x: [0, -15, 0],
+              y: [0, -10, 0],
+              scale: [1, 1.03, 1],
+              opacity: [0.1, 0.13, 0.1]
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 5
+            }}
+          />
+        </div>
+      )}
 
       <div className="max-w-6xl mx-auto relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
-            <span className="drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">Client Voices</span>
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 text-white sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+  <span className="drop-shadow-[0_0_3px_rgba(34,211,238,0.5)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)]">Client Voices</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
             What industry leaders say about working with me
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {testimonials.map((t, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.15, duration: 0.6 }}
+              transition={{ 
+                delay: shouldReduceMotion ? 0 : idx * 0.1, 
+                duration: shouldReduceMotion ? 0 : 0.5 
+              }}
               viewport={{ once: true }}
               className="relative group"
             >
-              {/* Glow effect */}
-              <div className={`absolute -inset-1 bg-gradient-to-r from-${t.color}-500/10 to-purple-500/10 rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              
-              <div className={`h-full bg-gray-900/80 p-6 rounded-xl border border-${t.color}-400/20 shadow-sm hover:shadow-lg transition-all duration-300 group-hover:border-${t.color}-400/50 backdrop-blur-sm relative overflow-hidden`}>
-                {/* Holographic grid overlay */}
-                <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
+              <div className={`h-full bg-gray-900/80 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-${t.color}-400/20 shadow-sm hover:shadow-lg transition-all duration-300 group-hover:border-${t.color}-400/50 backdrop-blur-sm relative overflow-hidden`}>
+                {/* Holographic grid overlay - hidden on mobile */}
+                <div className="hidden sm:block absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]"></div>
                 
-                <FaQuoteLeft className={`text-${t.color}-400 text-2xl mb-4 opacity-70`} />
+                <FaQuoteLeft className={`text-${t.color}-400 text-xl sm:text-2xl mb-3 sm:mb-4 opacity-70`} />
                 
-                <div className="flex items-center mb-4 gap-4 relative z-10">
+                <div className="flex items-center mb-3 sm:mb-4 gap-3 sm:gap-4 relative z-10">
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full border-2 border-gray-800 shadow-sm object-cover group-hover:border-cyan-400 transition-colors duration-300"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gray-800 shadow-sm object-cover group-hover:border-cyan-400 transition-colors duration-300"
                   />
                   <div>
-                    <h4 className="font-semibold text-white">{t.name}</h4>
+                    <h4 className="font-semibold text-white text-sm sm:text-base">{t.name}</h4>
                     <p className={`text-xs text-${t.color}-300`}>{t.position}</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-300 text-sm leading-relaxed mb-4 relative z-10">
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 relative z-10">
                   "{t.message}"
                 </p>
                 
@@ -164,21 +168,19 @@ export default function Testimonials() {
         </div>
 
         <motion.div
-          className="mt-12 text-center text-sm text-gray-500"
+          className="mt-8 sm:mt-12 text-center text-xs sm:text-sm text-gray-500"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
           viewport={{ once: true }}
         >
           <p>All testimonials are from verified clients and partners</p>
         </motion.div>
       </div>
 
-      {/* Cyberpunk Corner Accents */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-cyan-400/50 pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-purple-400/50 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-purple-400/50 pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-cyan-400/50 pointer-events-none"></div>
+      {/* Cyberpunk Corner Accents - hidden on mobile */}
+      <div className="hidden sm:block absolute top-0 left-0 w-16 sm:w-32 h-16 sm:h-32 border-t-2 border-l-2 border-cyan-400/50 pointer-events-none"></div>
+      <div className="hidden sm:block absolute top-0 right-0 w-16 sm:w-32 h-16 sm:h-32 border-t-2 border-r-2 border-purple-400/50 pointer-events-none"></div>
     </section>
   );
 }
