@@ -4,22 +4,22 @@ import { FaQuoteLeft } from 'react-icons/fa';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Jane Doe',
-      position: 'CTO, FutureTech Inc.',
+      name: 'Kevin OChae',
+      position: 'CTO, Kedatrack Limited.',
       message: 'Henry transformed our digital infrastructure with his futuristic design thinking. His technical execution is unparalleled in the industry.',
       avatar: 'https://i.pravatar.cc/150?img=3',
       color: 'cyan'
     },
     {
-      name: 'John Smith',
-      position: 'CEO, InnovateX',
+      name: 'Muchiri Erick',
+      position: 'CEO, Nourisha G ',
       message: 'A true visionary. The sleek, modern systems Henry delivered exceeded all our expectations and set new standards for our company.',
       avatar: 'https://i.pravatar.cc/150?img=4',
       color: 'purple'
     },
     {
-      name: 'Linda Kim',
-      position: 'Director of Engineering, NovaSolutions',
+      name: 'Dorcus Teddy',
+      position: 'Director of Engineering, BhaTek Software Solutions',
       message: 'Henry combines rare technical depth with exceptional design sensibility. Our team was consistently impressed by his professionalism and innovation.',
       avatar: 'https://i.pravatar.cc/150?img=5',
       color: 'blue'
