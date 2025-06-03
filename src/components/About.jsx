@@ -158,12 +158,15 @@ export default function About() {
             }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           >
-            <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"
-              variants={shouldReduceMotion ? {} : item}
-            >
-              <span className="drop-shadow-[0_0_4px_rgba(34,211,238,0.4)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">About Me</span>
-            </motion.h2>
+           <motion.h2
+  className="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white sm:text-transparent sm:bg-clip-text sm:bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400"
+  variants={shouldReduceMotion ? {} : item}
+>
+  <span className="drop-shadow-[0_0_3px_rgba(34,211,238,0.4)] sm:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)]">
+    About Me
+  </span>
+</motion.h2>
+
             
             <motion.p 
               className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed"
