@@ -14,7 +14,23 @@
     referrerpolicy="no-referrer"
   />
 
-  <style>
+<!-- In <head> -->
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  body {
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3, .neon-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+  }
+
+
+
+
     /* Consolidated and optimized animations */
     @media (prefers-reduced-motion: no-preference) {
       /* Only show animations if user hasn't requested reduced motion */
@@ -40,8 +56,7 @@
         0%, 100% { opacity: 0.8; transform: scale(0.98); }
         50% { opacity: 1; transform: scale(1.02); }
       }
-      
-     
+
       .optimized-animation {
         transform: translateZ(0);
         backface-visibility: hidden;
@@ -51,7 +66,6 @@
 
     /* Mobile-specific optimizations */
     @media (max-width: 768px) {
-     
       /* Disable heavy animations completely on mobile */
       .animate-flicker, .animate-scanline {
         animation: none !important;
@@ -129,7 +143,7 @@
   />
 </head>
 
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-white text-gray-900 antialiased">
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
   
